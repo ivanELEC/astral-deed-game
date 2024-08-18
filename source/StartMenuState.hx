@@ -4,10 +4,7 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.sound.FlxSound;
-import flixel.system.FlxAssets;
-import flixel.text.FlxText;
 import flixel.util.FlxColor;
-import flixel.util.FlxTimer;
 
 class StartMenuState extends FlxState
 {
