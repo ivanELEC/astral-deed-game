@@ -9,7 +9,7 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 
-class PlayState extends FlxState
+class IntroState extends FlxState
 {
 	var introTextAlpha:Float = 0;
 	var introText:FlxText;
@@ -20,19 +20,19 @@ class PlayState extends FlxState
 	override public function create()
 	{
 		super.create();
-		//global defaults
+		// global defaults
 		FlxAssets.FONT_DEFAULT = AssetPaths.poppinsMedium__ttf;
 		FlxG.mouse.load(AssetPaths.cursorPointer6__png);
-		
-		//intro assets setup
+
+		// intro assets setup
 		introText = new flixel.text.FlxText(0, 0, 0, "TODO Games", 64);
 		introText.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.PINK, 4);
 		introText.screenCenter();
 		add(introText);
-		
+
 		introSound = FlxG.sound.load(AssetPaths.introTouchAbsence__mp3);
 		introSound.looped = true;
-		
+
 		startText = new flixel.text.FlxText(0, 0, 0, "Click or Press Enter To Start", 10);
 		startText.screenCenter();
 		startText.y += 50;
@@ -40,11 +40,12 @@ class PlayState extends FlxState
 
 	override public function update(elapsed:Float)
 	{
-		
 		loadIntro();
 
-		if(introFinished){
-			if(FlxG.mouse.justReleased || FlxG.keys.pressed.ENTER){
+		if (introFinished)
+		{
+			if (FlxG.mouse.justReleased || FlxG.keys.pressed.ENTER)
+			{
 				unloadIntro();
 				FlxG.switchState(new StartMenuState());
 			}
@@ -55,7 +56,8 @@ class PlayState extends FlxState
 
 	function loadIntro()
 	{
-		if(introTextAlpha <= 1){
+		if (introTextAlpha <= 1)
+		{
 			introTextAlpha += 0.02;
 		}
 
@@ -64,13 +66,15 @@ class PlayState extends FlxState
 		timer.start(5.0, introPhaseOne, 0);
 	}
 
-	function introPhaseOne(_):Void{
+	function introPhaseOne(_):Void
+	{
 		introText.text = "Astral Deed";
 		introText.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.BLUE, 3);
 		introText.font = AssetPaths.jaquard12ChartedRegular__ttf;
 		introText.screenCenter();
 		add(startText);
-		if(!introSound.playing && !introFinished){
+		if (!introSound.playing && !introFinished)
+		{
 			introSound.play();
 		}
 		introFinished = true;
@@ -81,36 +85,5 @@ class PlayState extends FlxState
 		introText.visible = false;
 		startText.visible = false;
 		introSound.stop();
-	}
-}
-
-class StartMenuState extends FlxState
-{
-	var menuSound:FlxSound;
-
-	override public function create()
-	{
-		super.create();
-		
-		//menu assets setup
-		menuSound = FlxG.sound.load(AssetPaths.menuEophona__mp3);
-		menuSound.looped = true;
-		FlxG.camera.flash(FlxColor.WHITE, 0.33);
-		var menuBg = new FlxSprite();
-		menuBg.loadGraphic(AssetPaths.menuBgSpritesheet__png, true, FlxG.height, FlxG.width); 
-		var menuBgFrames = [for (i in 0...61) i];
-		menuBg.resetSizeFromFrame();
-		menuBg.animation.add("backgroundAnimation", menuBgFrames);
-		menuBg.animation.play("backgroundAnimation");
-		add(menuBg);
-	}
-
-	override public function update(elapsed:Float)
-	{	
-		if(!menuSound.playing){
-			menuSound.play();
-		}
-				
-		super.update(elapsed);
 	}
 }
