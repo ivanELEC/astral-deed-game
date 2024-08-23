@@ -1,7 +1,6 @@
 package;
 
 import flixel.FlxG;
-import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.sound.FlxSound;
 import flixel.util.FlxColor;
