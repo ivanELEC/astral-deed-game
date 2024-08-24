@@ -36,6 +36,7 @@ class StartMenuState extends FlxState
 	{
 		FlxG.switchState(new ViewDeckState());
 	}
+
 	function setupMenuAssets()
 	{
 		// background
@@ -47,8 +48,8 @@ class StartMenuState extends FlxState
 		menuSound.looped = true;
 
 		// buttons
-		deckButton = new MenuButton(0, 0, () -> clickDeck, "View Deck");
-		playButton = new MenuButton(0, 0, () -> clickDeck, "Play Game");
+		deckButton = new MenuButton(0, 0, clickDeck, "View Deck");
+		playButton = new MenuButton(0, 0, clickDeck, "Play Game");
 		deckButton.screenCenter();
 		playButton.screenCenter();
 		playButton.y = deckButton.y + 50;

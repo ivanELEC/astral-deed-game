@@ -2,7 +2,6 @@ package objects;
 
 import flixel.FlxSprite;
 import flixel.addons.ui.FlxButtonPlus;
-import flixel.system.FlxAssets;
 
 class MenuButton extends FlxButtonPlus
 {
