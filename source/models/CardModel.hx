@@ -8,7 +8,7 @@ class CardModel
 	var description:String;
 	var astroDomain:AstroDomainModel;
 	var sprite:FlxSprite;
-	var effectiveRangeMap:CardRangeMapModel;
+	var effectiveRangeMap:Array<PositionOffset>;
 	var friendlyAction:CardActionModel;
 	var opponentAction:CardActionModel;
 
