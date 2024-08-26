@@ -4,6 +4,8 @@ import flixel.FlxG;
 import flixel.FlxState;
 import flixel.sound.FlxSound;
 import flixel.util.FlxColor;
+import tjson.TJSON;
+
 
 class ViewDeckState extends FlxState
 {
@@ -20,5 +22,10 @@ class ViewDeckState extends FlxState
 	{	
 				
 		super.update(elapsed);
+	}
+	function loadCards()
+	{
+		var cardJson = TJSON.parse(AssetPaths.cards__json);
+		js.html.Console.log(cardJson.cards);
 	}
 }

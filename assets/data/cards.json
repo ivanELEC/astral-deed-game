@@ -1,0 +1,11 @@
+{
+    "cards":
+    [
+        {
+            "name": "TestCard",
+            "description": "Card to see if my code works", 
+            "spritePath": "testCard__png",
+            "astroDomain": "Earth"
+        }
+    ]
+}

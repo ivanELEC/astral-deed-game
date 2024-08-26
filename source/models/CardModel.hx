@@ -12,11 +12,10 @@ class CardModel
 	var friendlyAction:CardActionModel;
 	var opponentAction:CardActionModel;
 
-	public function new(name, description, sprite, astroDomain)
+	public function new(name, description, sprite)
 	{
 		this.name = name;
 		this.description = description;
 		this.sprite = sprite;
-		this.astroDomain = astroDomain;
 	}
 }
