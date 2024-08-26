@@ -1,4 +1,4 @@
-package objects;
+package objects.ui;
 
 import flixel.FlxSprite;
 import flixel.addons.ui.FlxButtonPlus;
@@ -6,7 +6,7 @@ import flixel.addons.ui.FlxButtonPlus;
 class MenuButton extends FlxButtonPlus
 {
 	public function new(X:Float = 0, Y:Float = 0, Callback:Dynamic, ?Label:String, Width:Int = 100, Height:Int = 20)
-	{	
+	{
 		var buttonNormalSprite = new FlxSprite(0, 0, AssetPaths.buttonDefault__png);
 		var buttonHighlightSprite = new FlxSprite(0, 0, AssetPaths.buttonHover__png);
 		super(X, Y, () -> Callback, Label, Width, Height);

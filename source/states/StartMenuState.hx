@@ -6,7 +6,7 @@ import flixel.FlxState;
 import flixel.addons.ui.FlxButtonPlus;
 import flixel.sound.FlxSound;
 import flixel.util.FlxColor;
-import objects.MenuButton;
+import objects.ui.MenuButton;
 
 class StartMenuState extends FlxState
 {
