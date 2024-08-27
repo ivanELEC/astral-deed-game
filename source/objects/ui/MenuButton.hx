@@ -9,7 +9,7 @@ class MenuButton extends FlxButtonPlus
 	{
 		var buttonNormalSprite = new FlxSprite(0, 0, AssetPaths.buttonDefault__png);
 		var buttonHighlightSprite = new FlxSprite(0, 0, AssetPaths.buttonHover__png);
-		super(X, Y, () -> Callback, Label, Width, Height);
+		super(X, Y, Callback, Label, Width, Height);
 
 		this.loadButtonGraphic(buttonNormalSprite, buttonHighlightSprite);
 		this.textNormal.size = 12;
