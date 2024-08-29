@@ -1,6 +1,8 @@
 package models;
 
 import flixel.FlxSprite;
+import flixel.text.FlxText;
+import flixel.util.FlxColor;
 
 @:build(tostring.ToString.generate())
 class CardModel
@@ -19,5 +21,9 @@ class CardModel
 		this.description = object.description;
 		this.sprite = new FlxSprite();
 		this.sprite.loadGraphic('assets/images/cardSprites/${object.spritePath}');
+	}
+	public function infoBoxText()
+	{
+		return 'Card: ${this.name}\nInfo: ${this.description}';
 	}
 }

@@ -46,6 +46,7 @@ class StartMenuState extends FlxState
 		// audio
 		menuSound = FlxG.sound.load(AssetPaths.menuEophona__mp3);
 		menuSound.looped = true;
+		menuSound.persist = true;
 
 		// buttons
 		deckButton = new MenuButton(0, 0, clickDeck, "View Deck");

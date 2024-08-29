@@ -2,7 +2,49 @@
     "cards":
     [
         {
-            "name": "TestCard",
+            "name": "TestCard1",
+            "description": "Card to see if my code works", 
+            "spritePath": "testCard.png",
+            "astroDomain": "Earth"
+        }, 
+        {
+            "name": "TestCard2",
+            "description": "Card to see if my code works", 
+            "spritePath": "testCard.png",
+            "astroDomain": "Earth"
+        },
+        {
+            "name": "TestCard3",
+            "description": "Card to see if my code works", 
+            "spritePath": "testCard.png",
+            "astroDomain": "Earth"
+        },
+        {
+            "name": "TestCard4",
+            "description": "Card to see if my code works", 
+            "spritePath": "testCard.png",
+            "astroDomain": "Earth"
+        },
+        {
+            "name": "TestCard5",
+            "description": "Card to see if my code works", 
+            "spritePath": "testCard.png",
+            "astroDomain": "Earth"
+        },
+        {
+            "name": "TestCard6",
+            "description": "Card to see if my code works", 
+            "spritePath": "testCard.png",
+            "astroDomain": "Earth"
+        },
+        {
+            "name": "TestCard7",
+            "description": "Card to see if my code works", 
+            "spritePath": "testCard.png",
+            "astroDomain": "Earth"
+        },
+        {
+            "name": "TestCard8",
             "description": "Card to see if my code works", 
             "spritePath": "testCard.png",
             "astroDomain": "Earth"

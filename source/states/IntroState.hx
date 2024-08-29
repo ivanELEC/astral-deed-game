@@ -24,7 +24,7 @@ class IntroState extends FlxState
 		FlxG.mouse.load(AssetPaths.cursorPointer6__png);
 
 		// intro assets setup
-		introText = new flixel.text.FlxText(0, 0, 0, "TODO Games", 64);
+		introText = new FlxText(0, 0, 0, "TODO Games", 64);
 		introText.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.PINK, 4);
 		introText.screenCenter();
 		add(introText);
