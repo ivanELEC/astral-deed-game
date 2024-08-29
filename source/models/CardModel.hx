@@ -2,20 +2,20 @@ package models;
 
 import flixel.FlxSprite;
 
+@:build(tostring.ToString.generate())
 class CardModel
 {
-	var name:String;
-	var description:String;
-	var astroDomain:AstroDomainModel;
-	var sprite:FlxSprite;
-	var effectiveRangeMap:Array<PositionOffset>;
-	var friendlyAction:CardActionModel;
-	var opponentAction:CardActionModel;
+	public var name:String;
+	public var description:String;
+	@:tostring.exclude public var astroDomain:AstroDomainModel;
+	@:tostring.exclude public var sprite:FlxSprite;
+	@:tostring.exclude public var effectiveRangeMap:Array<PositionOffset>;
+	@:tostring.exclude public var friendlyAction:CardActionModel;
+	@:tostring.exclude public var opponentAction:CardActionModel;
 
-	public function new(name, description, sprite)
+	public function new(object)
 	{
-		this.name = name;
-		this.description = description;
-		this.sprite = sprite;
+		this.name = object.name;
+		this.description = object.description;
 	}
 }

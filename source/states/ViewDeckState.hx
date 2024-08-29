@@ -2,16 +2,16 @@ package states;
 
 import flixel.FlxG;
 import flixel.FlxState;
-import flixel.sound.FlxSound;
 import flixel.util.FlxColor;
 import models.CardModel;
 import openfl.Assets;
+import openfl.utils.Object;
 import tjson.TJSON;
-
 
 class ViewDeckState extends FlxState
 {
-	var cardArray:Array<CardModel>;
+	var cardArray:Array<Object>;
+	var cardJson:Object;
 
 	override public function create()
 	{
@@ -28,8 +28,12 @@ class ViewDeckState extends FlxState
 	}
 	function loadCards()
 	{
-		var cardJson = TJSON.parse(Assets.getText(AssetPaths.cards__json));
-		var cardArray =    
-		js.html.Console.log(cardJson.cards);
+		cardJson = TJSON.parse(Assets.getText(AssetPaths.cards__json));
+		cardArray = cardJson.cards;
+		for (card in cardArray)
+		{
+			var cardInstance = new CardModel(card);
+			trace(cardInstance);
+		}
 	}
 }
