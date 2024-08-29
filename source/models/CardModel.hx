@@ -17,5 +17,7 @@ class CardModel
 	{
 		this.name = object.name;
 		this.description = object.description;
+		this.sprite = new FlxSprite();
+		this.sprite.loadGraphic('assets/images/cardSprites/${object.spritePath}');
 	}
 }

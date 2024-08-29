@@ -33,6 +33,7 @@ class ViewDeckState extends FlxState
 		for (card in cardArray)
 		{
 			var cardInstance = new CardModel(card);
+			add(cardInstance.sprite);
 			trace(cardInstance);
 		}
 	}

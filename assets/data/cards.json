@@ -4,7 +4,7 @@
         {
             "name": "TestCard",
             "description": "Card to see if my code works", 
-            "spritePath": "testCard__png",
+            "spritePath": "testCard.png",
             "astroDomain": "Earth"
         }
     ]
