@@ -15,6 +15,7 @@ class ViewDeckState extends FlxState
 {
 	var cardJsonArray:Array<Object>;
 	var cardInstanceArray:Array<CardModel> = [];	
+	var cardButtonAreas:Array<FlxClickArea> = [];
 	var cardJson:Object;
 	var cardPage:Int = 0;
 	var cardInfoText:FlxText;
@@ -54,16 +55,12 @@ class ViewDeckState extends FlxState
 			{
 				var card = cardInstanceArray[idx];
 				// set card position
-				card.sprite.x = (pos.x * 200) + 30;
-				card.sprite.y = (pos.y * 300) + 50;
+				card.updatePosition(((pos.x * 200) + 30), ((pos.y * 300) + 50));
 				// add card sprite to page
 				add(cardInstanceArray[idx].sprite);
 				// add clickable button for card sprite
-				var buttonArea = new FlxClickArea(card.sprite.x, card.sprite.y);
-				buttonArea.width = card.sprite.width;
-				buttonArea.height = card.sprite.height;
-				buttonArea.onUp = () -> updateInfoBox(card.infoBoxText());
-				add(buttonArea);
+				card.setOnClick(() -> updateInfoBox(card.infoBoxText()));
+				add(card.clickableArea);
 			}
 		}
 	}
