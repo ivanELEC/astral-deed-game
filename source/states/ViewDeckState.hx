@@ -72,6 +72,7 @@ class ViewDeckState extends FlxState
 		cardInfoText.size = 15;
 		add(cardInfoText);
 	}
+
 	function updateInfoBox(text:String)
 	{
 		cardInfoText.text = text;

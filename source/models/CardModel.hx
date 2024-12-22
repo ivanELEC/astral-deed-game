@@ -1,7 +1,9 @@
 package models;
 
+import effects.HighlightShader;
 import flixel.FlxSprite;
 import flixel.addons.ui.FlxClickArea;
+import flixel.input.mouse.FlxMouseEvent;
 
 @:build(tostring.ToString.generate())
 class CardModel
@@ -24,6 +26,7 @@ class CardModel
 		this.clickableArea = new FlxClickArea(this.sprite.x, this.sprite.y);
 		this.clickableArea.width = this.sprite.width;
 		this.clickableArea.height = this.sprite.height;
+		FlxMouseEvent.add(this.sprite, onMouseDown, onMouseUp, onMouseOver, onMouseOut);
 	}
 
 	public function setOnClick(func)
@@ -50,5 +53,19 @@ class CardModel
 	public function infoBoxText()
 	{
 		return 'Card: ${this.name}\nInfo: ${this.description}';
+	}
+	private function onMouseDown(object:FlxSprite) {}
+
+	private function onMouseUp(object:FlxSprite) {}
+
+	private function onMouseOver(object:FlxSprite)
+	{
+		var highlightShader = new HighlightShader();
+		object.shader = highlightShader;
+	}
+
+	private function onMouseOut(object:FlxSprite)
+	{
+		object.shader = null;
 	}
 }
